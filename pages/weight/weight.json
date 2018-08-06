@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "日志",
+    "usingComponents":
+    {
+        "ec-canvas": "../../ec-canvas/ec-canvas"
+    }
+}

@@ -1,0 +1,75 @@
+<view class="head">
+    <view class="head_config" bindtap="bindClickConfig">
+        <image src='https://zmlwx.oss-cn-shenzhen.aliyuncs.com/userconfig.png'></image>
+    </view>
+    <view class="center head_img">
+        <image src='https://xcx.zmelo.com/xcxzml/champion.png'></image>
+    </view>
+    <view class="center font36 cfff cont_name">土豆</view>
+    <view class="center font26 cfff cont_date">2018.4.4</view>
+    <view class="flexCenter cfff head_record">
+        <view class="center head_record_box">
+            <view class="font24">连续打卡10天</view>
+            <view class="font30">NO.305</view>
+        </view>
+        <view class="line"></view>
+        <view class="center head_record_box">
+            <view class="font24">连续打卡最高</view>
+            <view class="font30">25天</view>
+        </view>
+        <view class="line"></view>
+        <view class="center head_record_box">
+            <view class="font24">累计打卡50天</view>
+            <view class="font30">NO.325</view>
+        </view>
+    </view>
+</view>
+<view class="h15"></view>
+<view class="mid bgf">
+    <view class="weight_content">
+        <block wx:if="{{remainWeight > 0}}">
+            <view class='need c333 font28'>还需要减
+                <text class="special_style font80">{{remainWeight}}</text> kg</view>
+            <view class='progress_bar'>
+                <text class='plan'>{{currentWeight}}kg</text>
+                <view class='progress_bg'>
+                    <view class='progress_active' style="width:{{persent}}%"></view>
+                </view>
+                <text class='current'>{{targetWeight}}kg</text>
+            </view>
+            <view catchtap='toWeight' class='btn'>记录</view>
+        </block>
+        <block wx:else>
+            <view class="finish_box">
+                <view class="left">
+                    <image class="chp_img" src='https://xcx.zmelo.com/xcxzml/champion.png'></image>
+                </view>
+                <view class="right">
+                    <view class="title_top">恭喜您目标达成！</view>
+                    <view class="title_mid">您可以再重新定一个目标，让自己变得更完美！</view>
+                    <view class="title_bottom" bindtap="bindNewTarget">
+                        设置新目标
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view class="flexSpace mid_record">
+        <view class="mid_box center">
+            <view class="font24 c666 title">当前身高</view>
+            <view class="font36 c000 cont">163cm</view>
+        </view>
+        <view class="mid_box center">
+            <view class="font24 c666 title">健康体重范围</view>
+            <view class="font36 c000 cont">45kg-50kg</view>
+        </view>
+    </view>
+</view>
+<view class="h15"></view>
+<view class="flexSpace bgf footer">
+    <view class="font28 c000 title">绑定手机号</view>
+    <view class="font30 cb2b cont">未绑定</view>
+</view>
+<view class="calling">
+        <image src='https://zmlwx.oss-cn-shenzhen.aliyuncs.com/customerservice.png'></image>
+</view>

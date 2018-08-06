@@ -1,0 +1,197 @@
+ @import "./font/iconfont.wxss";
+::-webkit-scrollbar{
+  display: none;
+} 
+@font-face {
+    font-family: 'PingFang-Medium';
+    src: url('https://xcx.zmelo.com/xcxzml/ttf/PingFang-Medium.ttf');
+}
+
+html,body,div,p,ul,ol,li,a,span,b,table,tbody,tr,td{
+    list-style: none;margin: 0;padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+
+html,body{
+    font-family: Microsoft YaHei,Arial,Helvetica,sans-serif;
+    /*background: #fff;*/
+}
+
+
+
+/*字体设置*/
+.font22{font-size: 22rpx}
+.font23{font-size: 23rpx}
+.font24{font-size: 24rpx}
+.font25{font-size: 25rpx}
+.font26{font-size: 26rpx}
+.font27{font-size: 27rpx}
+.font28{font-size: 28rpx}
+.font29{font-size: 29rpx}
+.font30{font-size: 30rpx}
+.font31{font-size: 31rpx}
+.font32{font-size: 32rpx}
+.font33{font-size: 33rpx}
+.font34{font-size: 34rpx}
+.font35{font-size: 35rpx}
+.font36{font-size: 36rpx}
+.font37{font-size: 37rpx}
+.font38{font-size: 38rpx}
+.font39{font-size: 39rpx}
+.font40{font-size: 40rpx}
+.font41{font-size: 41rpx}
+.font42{font-size: 42rpx}
+.font43{font-size: 43rpx}
+.font44{font-size: 44rpx}
+.font45{font-size: 45rpx}
+.font46{font-size: 46rpx}
+.font47{font-size: 47rpx}
+.font48{font-size: 48rpx}
+.font49{font-size: 49rpx}
+.font50{font-size: 50rpx}
+.font51{font-size: 51rpx}
+.font52{font-size: 52rpx}
+.font53{font-size: 53rpx}
+.font54{font-size: 54rpx}
+.font55{font-size: 55rpx}
+.font56{font-size: 56rpx}
+.font57{font-size: 57rpx}
+.font58{font-size: 58rpx}
+.font59{font-size: 59rpx}
+.font60{font-size: 60rpx}
+.font80{font-size: 80rpx}
+
+
+
+/*颜色设置*/
+.cfe4{color: #fe4f69;}
+.c000{color:#000;}
+.cb0b{color: #b0b0b0}
+.cfff{color:#fff}
+.c999{color:#999}
+.c8194{color:#FF8194;}
+.c666{color:#666666;}
+.c333{color:#333333;}
+.cb2b{color:#B2B2B2;}
+.cccc{color:#cccccc;}
+
+.cfec{color:#FECF78;}
+.c8cd{color:#8CD9FE;}
+.c82d{color:#82DFD3;}
+.cffa{color:#FFA49D;}
+.c97d{color:#97D0FD;}
+.caab{color:#AAB7F2;}
+.ca8b{color:#A8B0C1;}
+
+.cffc{color: #ffc600}
+.cffe{color:#ffe259}
+.cff5{color:#ff5a5a}
+
+.bge5e{background-color:#E5E5E5}
+.bgf5f{background-color:#F5F5F5}
+.bgf{background-color: #fff}
+.bgfe4{background-color:#fe4f69 }
+.bgff8{background-color: #ff8194}
+.bg40a{background-color: #40a9ff}
+.bgffe{background-color: #ffec3d}
+.bg333{background-color: #333333}
+.bgff5{background-color: #ff5a5a}
+
+
+/*加粗设*/
+.bold600{font-weight: 600}
+.bold700{font-weight: 700}
+.bold800{font-weight: 800}
+.bold900{font-weight: 900}
+
+/*隐藏*/
+.hidden{visibility: hidden;}
+
+/*flex设*/
+.flex{
+     display: flex;
+     align-items: center;
+}
+
+.flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flexSpace{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flexAround{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+/*公共布局框*/
+/*.container{
+width: 100vw;
+height: 100vh;
+padding-top: 54rpx;
+background-color:#F5F5F5;
+}*/
+
+/*.framebox{
+width: 69rpx0;
+height: 10rpx00;
+margin: 0 30rpx 0 30rpx;
+border-radius:20rpx;
+box-shadow: 0 0 20rpx 10rpx rgba(254, 79, 105, 0.1);
+background-color: #fff;
+}*/
+
+/*.frame-con{
+    width: 54rpx8;
+    margin: 0 auto;
+}*/
+
+
+/*空隙*/
+
+.h15{
+     height: 15rpx;
+}
+
+.h30{
+     height: 30rpx;
+}
+
+.h20{
+    height: 20rpx;
+}
+
+.h68{
+    height: 68rpx;
+  }
+.h80{
+    height: 80rpx;
+}
+.h110{
+    height:110rpx;
+}
+.h11{
+    height: 11rpx;
+}
+
+
+/* 微信小程序样式 */
+view{
+    box-sizing: border-box;
+}
+button{
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+button::after{
+    border: none;
+}

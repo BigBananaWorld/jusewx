@@ -1,0 +1,45 @@
+<view class="container">
+    <view class="content">
+    <view class="color-text-box">
+        <view class="color-text">当前身高</view>
+    </view>
+    <view class="sm-text-box">
+        <view class="sm-text">脂玫乐依据身高设计训练内容</view>
+    </view>
+    <view class="picker-box">
+        <picker mode="multiSelector" range="{{heightArray}}" value="{{heightValue}}" bindchange="bindHeightChange">
+            <view class="picker">
+                <block wx:if="{{height != ''}}">
+                    {{height}} cm
+                </block>
+                <block wx:else>
+                     cm
+                </block>
+            </view>
+        </picker>
+    </view>
+    <view class="division"></view>
+    <view class="color-text-box2">
+        <view class="color-text">当前体重</view>
+    </view>
+    <view class="sm-text-box">
+        <view class="sm-text">放心，脂玫乐不会告诉任何人</view>
+    </view>
+    <view class="picker-box">
+        <picker mode="multiSelector" range="{{weightArray}}" value="{{weightValue}}" bindchange="bindWeightChange">
+            <view class="picker">
+                <block wx:if="{{weight != ''}}">
+                    {{weight}} kg
+                </block>
+                <block wx:else>
+                     kg
+                </block>
+            </view>
+        </picker>
+    </view>
+    <view class="division"></view>
+    </view>
+    <view class="btn-box">
+        <view class="btn {{finishForm?'':'unfinish'}}" bindtap="goNext">继续</view>
+    </view>
+</view>

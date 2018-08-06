@@ -1,0 +1,102 @@
+<!--pages/index1/index1.wxml-->
+<view class="header">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular='true'>
+    <block wx:for="{{rows}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item.banner_img}}" class="slide-image" data-web="{{item.type}}" data-img="{{item.img}}" data-url="{{item.url}}" bindtap='towebview'/>      
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view>
+    <view class="header-text flexSpace">
+      <view>
+        <text class="font24 c666">如果您喜欢在脂玫乐打卡记录，点击这里</text>
+      </view>
+      
+      <button open-type="getUserInfo" open-type="share"  bindgetuserinfo="getUserInfo">
+        <view>
+          <image src="https://zmlwx.oss-cn-shenzhen.aliyuncs.com/share.png" />
+          <text class='font26 cffc' style="padding-left:10rpx">邀请好友</text>
+        </view>
+      </button>     
+    </view>
+  </view>
+</view>
+<!--header结束-->
+<view class="h11 bgf5f"></view>
+
+<!--总次数排名开始-->
+<view class="ranking">
+  <text class="font28 c000" style="padding-left:30rpx">总次数排名</text>
+  <view class="flexSpace ranking-all">
+    <view class="ranking-items" wx:for="{{top4}}" wx:key="index" >
+      <view>
+        <image src="{{item.userinfo.Img}}" class="border{{index}}" />
+      </view>
+      <!--皇冠-->
+      <view class="top3" wx:if="{{index==0}}">
+        <image src="https://zmlwx.oss-cn-shenzhen.aliyuncs.com/home%20page1.png" />
+      </view>
+      <view  class="top3" wx:if="{{index==1}}">
+        <image src="https://zmlwx.oss-cn-shenzhen.aliyuncs.com/home%20page2.png" />
+      </view>
+      <view class="top3" wx:if="{{index==2}}">
+        <image src="https://zmlwx.oss-cn-shenzhen.aliyuncs.com/home%20page3.png" />
+      </view>
+      <!--数字-->
+      <view class="top-num c{{index}} font22" wx:if="{{index<3}}">
+         {{index+1}}
+      </view>        
+    </view>
+    <view class="ranking-items" wx:if="{{topfif.Img}}">
+      <view>
+        <image src="{{topfif.Img}}" class="border4"/>
+      </view>
+      <view class="top-num5 c2 font22 {{topfif.num<10?'top-num51':''}}" >
+        {{topfif.num}}
+      </view> 
+    </view>
+
+      
+      <view class="ranking-items ranking-more"  bindtap="torecordp">
+      <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+        <image src="https://zmlwx.oss-cn-shenzhen.aliyuncs.com/More.png" />
+      </button>  
+      </view>
+    
+    
+    
+  </view>
+  <!--打卡-->
+  <view class="record flexCenter" bindtap="torecord">
+    
+      <view class="unrecord" wx:if="{{!isrecord}}">
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="font30 cfff"> 
+            未打卡
+        </button> 
+      </view>
+     
+    <view class="isrecord" wx:if="{{isrecord}}">
+      <text class="font30 cfff">已连续打卡{{my.continuitysigncount}}天</text>
+    </view>
+  </view>
+</view>
+<!--总次数排名结束-->
+<view class="h11 bgf5f"></view>
+
+<!--打卡开始-->
+  <view class="card">
+    <view class="card-text flexSpace">
+      <text class="font28 c000">近7天体重打卡</text>
+      <text class="font26 c999" bindtap="to">详情</text>
+    </view>
+    <!--echarts图-->
+    <view class='charts_content'>
+      <ec-canvas id="mychart-dom-multi-line" canvas-id="mychart-multi-line" ec="{{ ec }}"></ec-canvas> 
+    </view>
+    
+  </view>
+  <view class='h80 bgf5f'></view>
+<!--打卡结束-->
+

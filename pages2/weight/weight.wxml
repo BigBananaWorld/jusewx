@@ -1,0 +1,90 @@
+<view class='content'>
+  <view class='charts'>
+    <view class='topBar'>
+      <view class='stepNum {{select=="steps"?"selected":null}}' data-type='steps' catchtap='btn_draw'>步数</view>
+      <view class='weightNum {{select=="weight"?"selected":null}}' data-type='weight' catchtap='btn_draw'>体重</view>
+      <view class='girthNum {{select=="tiwei"?"selected":null}}' data-type='bust' catchtap='btn_draw'>体围</view>
+      <view class='girthNum'>异常饮食</view>      
+    </view>
+    <view bindtap="bindRangeDate" class='time_btn'>
+      <text>
+        <text>{{startDate?startDate[1]+"月"+startDate[2]+"日"+"-"+endDate[1]+"月"+endDate[2]+"日":""}}</text><text class='iconfont icon-jiantouxia col'></text>
+      </text>
+    </view>
+    <view class='charts_content' style="{{noData==false?'display:block;':'display:none;'}}">
+      <ec-canvas id="mychart-dom-multi-line" canvas-id="mychart-multi-line" ec="{{ ec }}"></ec-canvas>
+    </view>
+    <view class='charts_content' style="{{noData==true?'display:block;':'display:none;'}}">
+      <canvas style='width:100%;height:516rpx;background:transparent' canvas-id='cvs'> </canvas>
+    </view>
+  </view>
+  
+  <view class='charts_type' wx:if='{{select=="tiwei"}}'>
+    <view class='bust' catchtap='draw' data-type='bust'>
+      <image src='https://xcx.zmelo.com/xcxzml/tiwei/xiong.png' class='{{selectType=="bust"?"colorRed":"colorDef"}}'></image>
+      <text class='{{selectType=="bust"?"colorRed":"colorDef"}}'>胸围</text>
+    </view>
+    <view class='waist'  catchtap='btn_draw' data-type='waist'>
+      <image src='https://xcx.zmelo.com/xcxzml/tiwei/yao.png' class='{{selectType=="waist"?"colorRed":"colorDef"}}'></image> 
+      <text class='{{selectType=="waist"?"colorRed":"colorDef"}}'>腰围</text>
+    </view>
+    <view class='arm' catchtap='btn_draw' data-type='arm'>
+      <image src='https://xcx.zmelo.com/xcxzml/tiwei/shoubi.png' class='{{selectType=="arm"?"colorRed":"colorDef"}}'></image>
+      <text class='{{selectType=="arm"?"colorRed":"colorDef"}}'>手臂围</text>
+    </view>
+    <view class='hipline' catchtap='btn_draw' data-type='hipline'>
+      <image src='https://xcx.zmelo.com/xcxzml/tiwei/tun.png' class='{{selectType=="hipline"?"colorRed":"colorDef"}}'></image>
+      <text  class='{{selectType=="hipline"?"colorRed":"colorDef"}}'>臀围</text>
+    </view>
+    <view class='thigh' catchtap='btn_draw' data-type='thigh'> 
+      <image src='https://xcx.zmelo.com/xcxzml/tiwei/datui.png' class='{{selectType=="thigh"?"colorRed":"colorDef"}}'></image>
+      <text class='{{selectType=="thigh"?"colorRed":"colorDef"}}'>大腿围</text>
+    </view>
+    <view class='calf' catchtap='btn_draw' data-type='calf'>
+      <image src='https://xcx.zmelo.com/xcxzml/tiwei/xiaotui.png' class='{{selectType=="calf"?"colorRed":"colorDef"}}'></image>
+      <text class='{{selectType=="calf"?"colorRed":"colorDef"}}'>小腿围</text> 
+    </view>   
+  </view>
+  <view class='addData_border'>
+    <picker mode="multiSelector" bindchange="addTiwei" value='{{tiweiDef}}' range='{{tiweiData}}'>
+      <view class='addData' wx:if='{{select=="tiwei"}}'  data-type='{{selectType}}'>添加{{selectTxt[selectType]}}</view>
+    </picker>
+  </view>
+  
+
+  <view class='charts_weight' wx:if='{{selectType=="weight"}}'>
+      <view class='icon'></view>
+      <view class='text'>纪录体重需要每天的坚持，加油！</view>
+
+      <picker mode="multiSelector" bindchange="addWeight" value='{{weightDef}}' range='{{weightData}}' class='btn'>
+        <button>记录体重</button>
+      </picker>
+      
+
+  </view>
+   <view class='charts_sign' wx:if='{{selectType=="steps"}}'>
+    <view class='top'>
+      <text class='category'>本次合计</text>
+      <view class='num'><text>{{stepNum.total}}</text> <text>步</text></view>
+    </view>
+    <view class='bottom'>
+      <view class="average">
+        <view class='num'>
+          <view class='theNum'>{{stepNum.average}}</view>
+          <view>步</view>
+        </view> 
+        <view class='category'>平均步数</view>
+      </view>
+      <view class='consume'>
+          <view class='num'>
+            <view  class='theNum'>{{stepNum.calorie}}</view>
+            <view>千卡</view>
+          </view>
+          <view class='category'>累计消耗</view>
+      </view>
+
+    </view>
+  </view> 
+
+<add id='add' title='{{selectTxt[selectType]}}'></add>
+</view>

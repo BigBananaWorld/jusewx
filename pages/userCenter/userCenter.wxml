@@ -1,0 +1,67 @@
+<view class="container">
+    <view class="header">
+        <block wx:if="{{avatarUrl}}">
+            <view class="image-box">
+                <image src="{{avatarUrl}}" mode="aspectFill"></image>
+            </view>
+        </block>
+        <view class="nick-box">
+            <view class="nickName">{{nickName}}</view>
+        </view>
+    </view>
+    <view class="mid-cont">
+        <picker mode="selector" range="{{sexArray}}" value="{{sex}}" range-key="key" bindchange="bindSexChange">
+            <view class="picker-box">
+                <view class="title">
+                    性别
+                </view>
+                <view class="val">
+                    <block wx:if="{{sex == 0}}">
+                        男
+                    </block>
+                    <block wx:else>
+                        女
+                    </block>
+                </view>
+            </view>
+            <view class="division"></view>
+        </picker>
+
+        <picker mode="multiSelector" range="{{heightArray}}" value="{{heightValue}}" bindchange="bindHeightChange">
+            <view class="picker-box">
+                <view class="title">
+                    身高
+                </view>
+                <view class="val">
+                    {{height}}厘米
+                </view>
+            </view>
+            <view class="division"></view>
+        </picker>
+        
+        <picker mode="multiSelector" mode="date" bindchange="bindBirthdayChange" value="{{birthdayVal}}">
+            <view class="picker-box">
+                <view class="title">
+                    生日
+                </view>
+                <view class="val">
+                    {{birthday}}
+                </view>
+            </view>
+        </picker>
+    </view>
+    <view class="mid-cont2">
+        <picker mode="multiSelector" range="{{targetArray}}" value="{{targetValue}}" bindchange="bindTargetChange">
+            <view class="picker-box">
+                <view class="title">
+                    目标
+                </view>
+                <view class="val">
+                    {{target}}公斤
+                </view>
+            </view>
+        </picker>
+    </view>
+   <!--  <view bindtap="bindGoWriteMsg">完善资料</view> -->
+    <!-- <view bindtap="bindTest">test</view> -->
+</view>

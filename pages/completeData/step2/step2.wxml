@@ -1,0 +1,36 @@
+<view class="container">
+    <view class="content">
+    <view class="color-text-box">
+        <view class="color-text">你的性别?</view>
+    </view>
+    <view class="sm-text-box">
+        <view class="sm-text">脂玫乐会依据性别设计训练内容</view>
+    </view>
+    <view class="sex-audio-box" bindtap="bindChangeSex">
+        <view class="sex-audio {{classSex==0?'select':'noSelect'}}" data-sex="man">男</view>
+        <view class="sex-audio {{classSex==1?'select':'noSelect'}}" data-sex="female">女</view>
+    </view>
+    <view class="color-text-box2">
+        <view class="color-text">你的生日？</view>
+    </view>
+    <view class="sm-text-box">
+        <view class="sm-text">仅用做推荐的依据，脂玫乐会帮你保密</view>
+    </view>
+    <view class="picker-box">
+        <picker mode="date" value="{{birthdayVal}}" end="{{today}}" bindchange="bindDateChange">
+            <view class="picker">
+                <block wx:if="{{birthday != ''}}">
+                    {{birthday}}
+                </block>
+                <block wx:else>
+                    年 月 日
+                </block>
+            </view>
+        </picker>
+    </view>
+    <view class="division"></view>
+    </view>
+    <view class="btn-box">
+        <view class="btn {{finishForm?'':'unfinish'}}" bindtap="goNext">继续</view>
+    </view>
+</view>

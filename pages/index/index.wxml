@@ -1,0 +1,82 @@
+<view class="header">
+  <image src='https://xcx.zmelo.com/xcxzml/activity/header.png'></image>
+  <text class='header_title'>今日消耗卡路里</text>
+  <view class='calorie'>
+    <text class='numb special_style'>{{calorie}}</text>
+    <text class='company special_style'>Cal</text>
+  </view>
+  <button catchtap='share' data-cal="{{calorie}}" data-conti='{{conti}}'>炫耀一下</button>
+</view>
+<view class='content'>
+  <view class='theWeight'>
+    <view class='weight_header' wx:if="{{remainWeight > 0}}">
+      <view>体重目标</view>
+      <!-- <view bindtap='bindShowCala' class='selectTime'>{{thisday}}</view> -->
+    </view>
+    <view class='weight_content'>
+      <block wx:if="{{remainWeight > 0}}">
+        <view class='need'>还需要减
+          <text class='special_style'>{{remainWeight}}</text> kg</view>
+        <view class='progress_bar'>
+          <text class='plan'>{{currentWeight}}kg</text>
+          <view class='progress_bg'>
+            <view class='progress_active' style="width:{{persent}}%"></view>
+          </view>
+          <text class='current'>{{targetWeight}}kg</text>
+        </view>
+        <view catchtap='toWeight' class='btn'>记录</view>
+      </block>
+      <block wx:else>
+        <view class="finish_box">
+          <view class="left">
+            <image class="chp_img" src='https://xcx.zmelo.com/xcxzml/champion.png'></image>
+          </view>
+          <view class="right">
+            <view class="title_top">恭喜您目标达成！</view>
+            <view class="title_mid">您可以再重新定一个目标，让自己变得更完美！</view>
+
+            <!-- <picker mode="multiSelector" range="{{targetArray}}" value="{{targetValue}}" bindchange="bindNewTarget"> -->
+            <view class="title_bottom" bindtap="bindNewTarget">
+              设置新目标
+            </view>
+            <!-- </picker> -->
+
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class='other'>
+      <view class='sign'>
+        <text class='title'>打卡记录</text>
+        <view class='msg'>
+          <text class='time'>{{conti}}</text>连续
+          <view>已打卡{{totalDay}}天</view>
+        </view>
+        <view catchtap='toSign' class='btn'>{{signText}}</view>
+      </view>
+      <view class='diet'>
+        <text class='title'>异常饮食</text>
+        <view class='msg'>
+          <text><text class='time'>{{foodDay}}</text>次</text>
+          <view>本周情况</view>
+        </view>
+        <view catchtap='toAbnormalAiet' class='btn'>记录</view>
+      </view>
+    </view>
+  </view>
+</view>
+<sign id="sign" total="{{totalDay}}" continuity="{{conti}}"></sign>
+<!-- 分享弹框 -->
+<view class="share_container" style="{{isShare==true?'display:block;':'display:none;'}}">
+  <view class='share_mask'></view>
+  <view class='share_close iconfont icon-guanbi col' catchtap='closeShare'></view>
+  <view class='share_content'>
+    <canvas canvas-id='myCanvas' style='width:"{{canvasSize.w}}";height:"{{canvasSize.h}}"'></canvas>
+    <view class='share_btn'>
+      <view class='share_save' catchtap='shareSave'>保存挑战令</view>
+      <view class='share_send_border'>
+        <button class='share_send' catchtap='onShareAppMessage' open-type="share">发送微信好友</button>
+      </view>
+    </view>
+  </view>
+</view>

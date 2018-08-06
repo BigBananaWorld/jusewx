@@ -1,0 +1,90 @@
+page {
+    background: #F5F5F5;
+}
+view,text,button{
+  padding: 0;
+  margin: 0;
+}
+/* header部分 */
+.header {
+  width: 100%;
+  background: #fff;
+  border-top: 1rpx solid #F5F5F5;
+  text-align: center;
+  font-size: 26rpx;
+  font-family: 'PingFang-Medium';
+  color: #000;
+  line-height: 80rpx;
+  position: relative;
+}
+.header .iconfont {
+  font-size: 26rpx;
+}
+.header .doubt {
+  position: absolute;
+  top: 0rpx;
+  right: 38rpx;
+  color: #E0E0E0;
+  overflow: hidden;
+}
+.header .doubt .iconfont {
+  font-size: 41rpx;
+}
+/* header部分结束 */
+/* content部分 */
+.content {
+  margin-bottom: 110rpx;
+}
+.deitMsg {
+  margin-top: 10rpx;
+  background: #fff;
+  border-radius: 5rpx;
+}
+.deitMsg .theTime {
+  padding: 12rpx 0 5rpx 30rpx;
+}
+.deitMsg .theTime>text {
+  background: linear-gradient(to bottom,#EC6764,#F2A46A);
+  -webkit-background-clip: text;
+  color: transparent;  
+  font-family: 'NovaUltraSSiUltraCondensed';
+  font-size: 28rpx;
+  font-family: 'PingFang-Medium';
+}
+/* table */
+.table {
+  width: 100%;
+  font-size: 24rpx;
+  padding-bottom: 20rpx;
+}
+.tr {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.tr .td {
+  color: #999;
+}
+.tr .th:first-child ,.tr .td:first-child {
+  width: 50% !important;
+  text-align: left !important;
+  padding-left: 30rpx;
+}
+.tr .th,.tr .td{
+  width: 24%;
+  text-align: center;
+  line-height: 60rpx;
+  font-family: 'PingFang-Medium'
+}
+/* table结束 */
+.addDeit {
+  width: 100%;
+  height: 100rpx;
+  color: #fff;
+  background: #FD6E6A;
+  font-size: 28rpx;
+  position: fixed;
+  bottom: 0;
+  line-height: 99rpx;
+  text-align: center;
+}

@@ -1,0 +1,2 @@
+ <!-- <web-view src="{{url}}"></web-view>  -->
+ <image src='{{img}}/xcximg.png' class='activityimg'></image>

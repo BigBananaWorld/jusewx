@@ -1,0 +1,15 @@
+<!--pages/activities/activities.wxml-->
+<view class="activities bgf5f">
+  <view>
+    <view wx:for="{{rows}}" wx:key="{{index}}">
+      <view class="activity-item">
+        <image src="{{item.banner_img}}" data-web="{{item.type}}" data-img="{{item.img}}" data-url="{{item.url}}" bindtap='towebview' />
+        <text class="font25 cfff">查看详情</text>
+      </view>
+    </view>
+  </view>
+  <view>
+    <text class="font24 c999 flexCenter bottom-text">已经到底了哦~</text>
+  </view>
+  
+</view>

@@ -1,0 +1,5 @@
+<!--pages/carouselimg/carouselimg.wxml-->
+<view class="all">
+  <image src="{{url}}" />
+</view>
+

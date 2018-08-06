@@ -1,0 +1,82 @@
+<view class="container">
+    <view class="h15"></view>
+    <view class="select flexSpace bgf font34" bindtap="bindImgChange">
+        <view class="c000 title">头像</view>
+        <view class="flexSpace">
+            <view class="image-box_pic">
+                <image src="{{avatarUrl}}"></image>
+            </view>
+            <view class="image-box_icon">
+            </view>
+        </view>
+    </view>
+    <view class="h30"></view>
+    <view class="mid-cont">
+        <picker mode="selector" range="{{sexArray}}" value="{{sex}}" range-key="key" bindchange="bindSexChange">
+            <view class="select bgf flexSpace border font34">
+                <view class="c000 title">
+                    性别
+                </view>
+                <view class="flexSpace">
+                    <view class="val cb2b">
+                        <block wx:if="{{sex == 0}}">
+                            男
+                        </block>
+                        <block wx:else>
+                            女
+                        </block>
+                    </view>
+                    <view class="image-box_icon">
+                    </view>
+                </view>
+            </view>
+            <view class="viewision"></view>
+        </picker>
+        <picker mode="multiSelector" range="{{heightArray}}" value="{{heightValue}}" bindchange="bindHeightChange">
+            <view class="select bgf flexSpace border font34">
+                <view class="c000 title">
+                    身高
+                </view>
+                <view class="flexSpace">
+                    <view class="val cb2b">
+                        {{height}}厘米
+                    </view>
+                    <view class="image-box_icon">
+                    </view>
+                </view>
+            </view>
+            <view class="viewision"></view>
+        </picker>
+        <picker mode="multiSelector" mode="date" bindchange="bindBirthdayChange" value="{{birthdayVal}}">
+            <view class="select bgf flexSpace font34">
+                <view class="c000 title">
+                    生日
+                </view>
+                <view class="flexSpace">
+                    <view class="val cb2b">
+                        {{birthday}}
+                    </view>
+                    <view class="image-box_icon">
+                    </view>
+                </view>
+            </view>
+        </picker>
+    </view>
+    <view class="h20"></view>
+    <view class="mid-cont2">
+        <picker mode="multiSelector" range="{{targetArray}}" value="{{targetValue}}" bindchange="bindTargetChange">
+            <view class="select bgf flexSpace font34">
+                <view class="c000 title">
+                    目标
+                </view>
+                <view class="flexSpace">
+                    <view class="val cb2b">
+                        {{target}}公斤
+                    </view>
+                    <view class="image-box_icon">
+                    </view>
+                </view>
+            </view>
+        </picker>
+    </view>
+</view>

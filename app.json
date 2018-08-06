@@ -1,0 +1,70 @@
+{
+  "pages": [  
+     "pages/index1/index1",
+    "pages/record1/record1",
+    "pages/record/record",
+    "pages2/weight/weight",
+    "pages/index/index",
+    "pages/userCenter/userCenter",  
+    "pages/completeData/step1/step1",
+    "pages/completeData/step2/step2",
+    "pages/completeData/step3/step3",
+    "pages/completeData/step4/step4",
+    "pages/completeData/step5/step5",
+    "pages2/abnormalAiet/abnormalAiet",
+    "pages2/abnormalAiet/addDeit/addDeit",
+    "pages/record/calendar2/calendar2",
+    "pages/record/webPage/webPage",
+    "pages/activities/activities",
+    "pages/webview/webview",
+    "pages/weight/weight",
+    "pages/userCenter1/userCenter",
+    "pages/userCenter1/targetconfig/targetconfig",
+    "pages/userCenter1/userconfig/userconfig",
+    "pages/carouselimg/carouselimg"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "脂玫乐"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#000000",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index1/index1",
+        "text": "首页",
+        "selectedIconPath": "/img/homepage_selected.png",
+        "iconPath": "/img/homepage.png"
+      },
+      {
+        "pagePath": "pages/activities/activities",
+        "text": "活动",
+        "selectedIconPath": "/img/activity_selected.png",
+        "iconPath": "/img/activity.png"
+      },
+      {
+        "pagePath": "pages/record1/record1",
+        "text": "打卡",
+        "selectedIconPath": "/img/Punchtheclock_selected.png",
+        "iconPath": "/img/Punchtheclock_@2x.png"
+      },
+      {
+        "pagePath": "pages/weight/weight",
+        "text": "日志",
+        "selectedIconPath": "/img/Journal_selected.png",
+        "iconPath": "/img/Journal.png"
+      },
+      {
+        "pagePath": "pages/userCenter1/userCenter",
+        "text": "我的",
+        "selectedIconPath": "/img/my_selected.png",
+        "iconPath": "/img/my_.png"
+      }
+    ]
+  }
+}

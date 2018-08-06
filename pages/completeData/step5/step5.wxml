@@ -1,0 +1,23 @@
+<view class="container">
+    <view class="content">
+    <view class="img-box">
+		<view class="img">
+			<image mode="aspectFit" src="{{imgSrc}}"></image>
+		</view>
+	</view>
+    <view class="big-text-box">
+        <view class="big-text">完成了！</view>
+    </view>
+    <view class="mid-text-box">
+        <view class="mid-text">感谢您的配合请开始您的减肥之旅吧</view>
+    </view>
+    <view class="sm-text-box">
+        <view class="sm-text">除了产品之外 保持健康生活习惯也很重要</view>
+        <view class="sm-text">尽量避免高热量食物多运动总是不错的</view>
+    </view>
+</view>
+  <view class="btn-box">
+        <view class="btn" bindtap="submitUserInfo">好的</view>
+    </view>
+
+</view>

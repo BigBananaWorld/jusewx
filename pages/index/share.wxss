@@ -1,0 +1,135 @@
+@font-face {
+  font-family: 'NovaUltraSSiUltraCondensed';
+  src: url('http://jusexcx.oss-cn-hangzhou.aliyuncs.com/assets/font/nova.ttf');
+}
+
+/* button,view,text {
+  padding: 0;
+  margin: 0;
+} */
+
+.share_container {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+
+.share_container canvas {
+  width: 99.8%;
+  height: 700rpx;
+  display: block;
+  background: white;
+  z-index: 999;
+}
+
+.share_mask {
+  width: 100%;
+  z-index: 998;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.share_content {
+  width: 600rpx;
+  background: #fff;
+  -webkit-border-radius:6rpx;
+  border-radius:6rpx;
+  z-index: 2000;
+  left: 74rpx;
+  top: 203rpx;
+  overflow: hidden;
+}
+
+.share_btn {
+  background: white;
+  z-index: 1001;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+  margin-left:-1px;
+}
+
+.share_save, .share_send {
+  z-index: 1001;
+  width: 45%;
+  height: 100%;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  color: #333;
+  font-family: 'NovaUltraSSiUltraCondensed';
+}
+
+ .share_btn::after {
+  content: "";
+  width: 0;
+  height: 100rpx;
+  border-left: 1rpx solid #d2d3d5;
+  position: absolute;
+  left: 298rpx;
+  z-index: 5000;
+} 
+
+.share_btn::before {
+  content: "";
+  width: 100%;
+  border-top: 1rpx solid #d2d3d5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5000;
+}
+
+.share_close {
+  z-index: 1001;
+  width: 48rpx;
+  height: 48rpx;
+  box-sizing: border-box;
+  position: absolute;
+  top: -100rpx;
+  right: 0;
+  border: 4rpx solid #fff;
+  border-radius: 50%;
+  font-size: 24rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 45rpx;
+  overflow: hidden;
+}
+
+.share_close::after {
+  content: "";
+  height: 86rpx;
+  width: 100px;
+  border: 1rpx solid #fff;
+  position: absolute;
+  top: 118rpx;
+  right: 115rpx;
+  z-index: 5000;
+}
+.share_btn .share_send_border {
+    width: 46%;
+    height: 100%;
+    overflow: hidden;
+}
+.share_btn button {
+  background-color: white;
+  position: relative;
+  width: 110%;
+  height: 110%;
+  border: none;
+  z-index: 1001;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  color: #333;
+  font-family: 'NovaUltraSSiUltraCondensed';
+  margin-left: -10rpx;
+  margin-bottom: -10rpx;
+}

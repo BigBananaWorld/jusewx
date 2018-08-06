@@ -1,0 +1,29 @@
+<view class="container">
+ <view class="content">
+    <view class="color-text-box">
+        <view class="color-text">你的目标？</view>
+    </view>
+    <view class="sm-text-box">
+        <view class="sm-text">根据您的资料，我们建议的健康体重范围是</view>
+    </view>
+    <view class="sm-text-box2">
+        <view class="sm-text center">{{recommendWeight.start}}~{{recommendWeight.end}}kg</view>
+    </view>
+    <view class="picker-box">
+        <picker mode="multiSelector" range="{{weightArray}}" value="{{weightValue}}" bindchange="bindWeightChange">
+            <view class="picker">
+                <block wx:if="{{weight != ''}}">
+                    {{weight}} kg
+                </block>
+                <block wx:else>
+                     kg
+                </block>
+            </view>
+        </picker>
+    </view>
+    <view class="division"></view>
+    </view>
+    <view class="btn-box">
+        <view class="btn {{finishForm?'':'unfinish'}}" bindtap="save">保存</view>
+    </view>
+</view>

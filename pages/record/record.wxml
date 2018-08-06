@@ -1,0 +1,69 @@
+<view class="container">
+    <image  bindtap="bindShowActivityPage" class="backimg" src="{{backImage}}"></image>  
+    <view class="rank-box">
+        <view class="rank">
+            <view class="title-box" bindtap="bindChangeCurrent">
+                <view class="title {{currentItem==0?'on':''}}" data-current="0">总次数</view>
+                <view class="title {{currentItem==1?'on':''}}" data-current="1">连续</view>
+            </view>
+            <swiper current="{{currentItem}}" bindchange="bindChange" style="height: {{swiperHeight}}rpx" duration="0">
+                <swiper-item>
+                    <view class="rank-item mine">
+                        <view class="left">
+                            <view class="{{myTotaltime.rank<=3?'top':''}}">{{myTotaltime.rank}}</view>
+                            <image src="{{myTotaltime.photo?myTotaltime.photo:'https://xcx.zmelo.com/xcxzml/defaultImg.png'}}"></image>
+                            <view> {{myTotaltime.nickName}} </view>
+                        </view>
+                        <view class="right">
+                            <view class="{{myTotaltime.rank<=3?'topNum':''}}">
+                                {{myTotaltime.totalsigncount}}
+                            </view>
+                        </view>
+                    </view>
+                    <view class="division"></view>
+                    <view class="rank-item" wx:for="{{totalTime}}" wx:key="rank">
+                        <view class="left">
+                            <view class="{{item.rank<=3?'top':''}}">{{item.rank}}</view>
+                            <image src="{{item.photo?item.photo:'https://xcx.zmelo.com/xcxzml/defaultImg.png'}}"></image>
+                            <view> {{item.nickName}} </view>
+                        </view>
+                        <view class="right">
+                            <view class="{{item.rank<=3?'topNum':''}}">
+                                {{item.totalsigncount}}
+                            </view>
+                        </view>
+                    </view>
+                </swiper-item>
+                <swiper-item>
+                    <view class="rank-item mine">
+                        <view class="left">
+                            <view class="{{myCountinueTime.rank<=3?'top':''}}">{{myCountinueTime.rank}}</view>
+                            <image src="{{myCountinueTime.photo?myCountinueTime.photo:'https://xcx.zmelo.com/xcxzml/defaultImg.png'}}"></image>
+                            <view> {{myCountinueTime.nickName}} </view>
+                        </view>
+                        <view class="right">
+                            <view class="{{myCountinueTime.rank<=3?'topNum':''}}">{{myCountinueTime.continuitysigncount}}</view>
+                        </view>
+                    </view>
+                    <view class="division"></view>
+                    <view class="rank-item" wx:for="{{countiueTime}}" wx:key="rank">
+                        <view class="left">
+                            <view class="{{item.rank<=3?'top':''}}">{{item.rank}}</view>
+                            <image src="{{item.photo?item.photo:'https://xcx.zmelo.com/xcxzml/defaultImg.png'}}"></image>
+                            <view> {{item.nickName}} </view>
+                        </view>
+                        <view class="right ">
+                            <view class="{{item.rank<=3?'topNum':''}}">{{item.continuitysigncount}}</view>
+                        </view>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class="division"></view>
+    </view>
+</view>
+<view class="btn-box">
+    <view class="btn" wx:if="{{showButton}}" bindtap="bindGoIndex">我来挑战</view>
+</view>
+
+<button class="botton-share font28 cfff" open-type="share">分享给好友</button>

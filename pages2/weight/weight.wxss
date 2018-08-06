@@ -1,0 +1,214 @@
+
+view,text,button {
+  padding: 0;
+  margin: 0;
+}
+@font-face {
+    font-family: 'PingFang-Medium';
+    src: url('https://xcx.zmelo.com/xcxzml/ttf/PingFang-Medium.ttf');
+}
+ @font-face { 
+  font-family: 'NovaUltraSSiUltraCondensed';
+  src:url('http://jusexcx.oss-cn-hangzhou.aliyuncs.com/assets/font/nova.ttf');
+}
+.content,page{
+  width: 100%;
+  height: 100%;
+}
+/* 图标部分 */
+.charts {
+  width: 100%;
+  height: 705rpx;
+  background: -webkit-linear-gradient(left top,#FD6E6A,#FFC600 )
+}
+.topBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1rpx dashed #ccc;
+}
+.topBar view {
+  display: inline-block;
+  width: 30%;
+  height: 76rpx;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 26rpx;
+  font-family: PingFang-Medium;
+  color: #fff;
+  line-height: 76rpx;
+  position: relative;
+}
+ .selected::after { /*获取焦点 */
+  content: "";
+  display: inline-block;
+  width: 14%;
+  height: 6rpx;
+  background: #fff;
+  position: absolute;
+  bottom: 0rpx;
+  left: 43%;
+  border-radius: 5rpx;
+}
+.charts .time_btn {
+  border-style: none;
+  /* line-height: 100rpx; */
+  padding-top: 30rpx;
+  padding-left: 40rpx;
+  font-size: 24rpx;
+  color: #fff;
+  font-family: 'PingFang-Medium' !important;
+}
+.time_btn .iconfont {
+  font-size: 24rpx !important;
+}
+/* 折线图部分 */
+.charts_content {
+  width: 100%;
+  height: 516rpx;
+  /* transform: scale(1.1,1.1) */
+}
+
+/* 按钮部分 */
+.charts_type {
+  margin-bottom:90rpx;
+  margin-top:14rpx;
+  width:100%;
+  height:34.5%;
+  min-height:403rpx;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  flex-direction:row;
+  box-sizing:border-box;
+  padding:0 26rpx;
+
+}
+.charts_type view{
+  width: 30%;
+  text-align: center;
+  overflow: hidden; 
+}
+.charts_type image {
+  width: 100rpx;
+  height: 100rpx;
+  border: 4rpx solid black;
+  border-radius: 50%;
+}
+.colorRed {
+  border-color: #FF6666 !important;
+  color: #FF6666 !important;
+}
+.colorDef {
+  border-color: #A8B0C1 !important;
+  color: #A8B0C1 !important;
+}
+.charts_type text {
+  display: block;
+  text-align: center;
+  line-height: 65rpx;
+  font-size: 26rpx;
+  color: #A8B0C1;
+}
+.addData_border {
+  width:100%;
+  position: fixed;
+  bottom: 0;
+}
+.addData {
+  width: 100%;
+  height: 100rpx;
+  padding: 0;
+  margin:0;
+  font-size: 26rpx;
+  color: #fff;
+  line-height: 100rpx;
+  text-align: center;
+  background: #FD6E6A;
+}
+.charts_weight,charts_sign {
+  width: 100%;
+  height: 44.5%;
+  min-height: 403rpx;
+  background: #fff;
+  text-align: center;
+}
+.charts_weight .icon {
+  width:66rpx;
+  height:66rpx;
+  display: inline-block;
+  background: url('https://xcx.zmelo.com/xcxzml/Record_.png');
+  margin-top: 110rpx;
+  background-size: 100%;
+
+}
+.charts_weight .text {
+  margin-top: 30rpx;
+}
+.charts_weight {
+  font-size: 28rpx;
+  color:#ccc;
+}
+.charts_weight button {
+  background: #FD6E6A;
+  border-radius: 50rpx;
+  line-height: 72rpx;
+  font-size: 26rpx;
+  color:#fff;
+}
+.charts_weight .btn {
+  display: inline-block;
+  width:190rpx;
+  height:72rpx;
+  margin-top: 70rpx;
+}
+
+.charts_sign {
+  position: relative;  
+  text-align: center;
+}
+.charts_sign .top {
+  width: 690rpx;
+  height: 185rpx;
+  font-size: 26rpx;
+  border-bottom: 1rpx solid #E5E5E5; 
+  position: absolute;
+  top: 38rpx;
+  left: 30rpx;
+}
+.charts_sign .bottom {
+  width: 100%; 
+  height: 286rpx;
+  font-size: 24rpx;
+  position: absolute ;
+  top: 210rpx;
+  display: flex;
+  justify-content: space-around;
+}
+ .charts_sign .bottom>view {
+  width: 40%; 
+  height: 285rpx;
+  overflow: hidden;
+} 
+.charts_sign .category {
+  line-height:70rpx;
+}
+.charts_sign .num :nth-child(1) {
+  font-size: 60rpx;
+  color:#FD6E6A;
+  font-family: 'NovaUltraSSiUltraCondensed';
+}
+
+.charts_sign .bottom .theNum {
+  padding-top:60rpx; 
+  line-height: 80rpx;
+}
+.charts_sign .bottom .category {
+  color: #ccc;
+}
+.displayNone {
+  display:none !important;
+}
+
+

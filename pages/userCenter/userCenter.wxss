@@ -1,0 +1,96 @@
+page {
+	background-color: #F5F5F5;
+}
+.container {
+	display: flex;
+	display: -webkit-flex; /* Safari */
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
+	font-family: "PingFang-SC-Medium";
+	
+}
+
+.header {
+	height: 400rpx;
+	background: linear-gradient(to top left,#FFC600 30%,#FD6E6A 70%);
+}
+
+.image-box{
+	display: flex;
+	margin-top: 71rpx;
+}
+
+.header image {
+	margin-left: auto;
+	margin-right: auto;
+	width : 193rpx;
+	height: 193rpx;
+	border-radius: 50%;
+	border:4rpx solid #FFFFFF;
+}
+
+.header .nick-box{
+	margin-top: 46rpx;
+	height: 31rpx;
+	widows: 66rpx;
+	line-height: 31rpx;
+}
+
+.header .nickName{
+	color: #FFFFFF;
+	font-size: 34rpx;
+	text-align: center;
+}
+
+/*
+ * 中间内容
+ */
+.mid-cont {
+	margin-top: 9rpx;
+	display: flex;
+	display: -webkit-flex; /* Safari */
+	flex-direction: column;
+	/*height: 272rpx;*/
+	background-color: #FFFFFF;
+}
+
+.picker-box{
+	display: flex;
+	justify-content: space-between;
+	height: 90rpx;
+}
+
+.picker-box .title {
+	padding: 29rpx 32rpx;
+	font-size: 34rpx;
+	line-height: 32rpx;
+	color:#000000;
+  font-family: 'PingFang-SC-Medium'
+}
+
+.picker-box .val {
+	padding:29rpx 59rpx;
+	font-size: 34rpx;
+	line-height: 32rpx;
+	color:#B2B2B2;
+  font-family: 'PingFang-SC-Medium'
+}
+
+.mid-cont2 {
+	margin-top: 19rpx;
+	display: flex;
+	display: -webkit-flex; /* Safari */
+	flex-direction: column;
+	background-color: #FFFFFF;
+}
+
+/*
+ * 分割线样式
+ */
+.division {
+	height: 2rpx;
+	/*margin-right: auto;*/
+	margin-left: 29rpx;
+	background-color: #E5E5E5;
+}

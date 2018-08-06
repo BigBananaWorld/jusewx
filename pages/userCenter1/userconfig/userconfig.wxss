@@ -1,0 +1,40 @@
+page {
+background-color:  #F5F5F5;	
+}
+
+.container {
+	display: flex;
+	display: -webkit-flex; /* Safari */
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
+}
+
+.select {
+	height: 88rpx;
+  line-height: 88rpx;
+  padding: 0 40rpx 0 30rpx;
+}
+
+
+
+.image-box_icon {
+	width : 43rpx;
+	height: 43rpx;
+	background: url("https://zmlwx.oss-cn-shenzhen.aliyuncs.com/details.png") no-repeat center center;
+}
+
+.image-box_pic{
+	width : 80rpx;
+	height: 80rpx;
+}
+
+.image-box_pic image {
+	width : 80rpx;
+	height: 80rpx;
+	border-radius: 50%;
+}
+
+.border{
+	border-bottom: 1rpx solid #E5E5E5;
+}

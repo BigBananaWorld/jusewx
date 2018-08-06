@@ -1,0 +1,168 @@
+<view class='content'>
+
+    <cover-view class='font28 c000 bgf topBar'>
+        <cover-view class='{{select=="steps"?"selected":null}}' data-type='steps' catchtap='btn_draw'>步数</cover-view>
+        <cover-view class='{{select=="weight"?"selected":null}}' data-type='weight' catchtap='btn_draw'>体重</cover-view>
+        <cover-view class='{{select=="tiwei"?"selected":null}}' data-type='bust' catchtap='btn_draw'>体围</cover-view>
+        <cover-view class='{{select=="food"?"selected":null}}' data-type='food' bindtap="changeFoodRecord">异常饮食</cover-view>
+    </cover-view>
+    <scroll-view scroll-y="true" style="height:400rpx;">
+    <view style="{{needEchart==true?'display:block;':'display:none;'}}">
+        <view class='charts bgf'>
+            <view bindtap="bindRangeDate" class='time_btn'>
+                <text>
+                    <text>{{startDate?startDate[1]+"月"+startDate[2]+"日"+"-"+endDate[1]+"月"+endDate[2]+"日":""}}</text>
+                    <text class='iconfont icon-jiantouxia col'></text>
+                </text>
+            </view>
+        
+            <view class='charts_content' style="{{noData==false?'display:block;':'display:none;'}}">
+               <ec-canvas id="mychart-dom-multi-line" canvas-id="mychart-multi-line" ec="{{ ec }}"></ec-canvas>
+            </view>
+           
+            <view class='charts_content' style="{{noData==true?'display:block;':'display:none;'}}">
+                <view class="font24 c999 explain">获取{{selectTxt[selectType]}}后会看到变化趋势哦</view>
+                <image style="width:100%;" src="https://zmlwx.oss-cn-shenzhen.aliyuncs.com/log/emptypic.png"></image>
+            </view>
+        </view>
+    </view>
+     </scroll-view>
+    <view class="h15"></view>
+    <!-- 步数版块 -->
+    <view class='charts_sign bgf' wx:if='{{select=="steps"}}'>
+        <!-- <block wx:if="{{hasStep}}"> -->
+        <view class="sign_msg">
+            <view class='bgf top'>
+                <view class='font26 c666 category'>本次合计</view>
+                <view class='font24 num'>
+                    <text>{{stepNum.total}} </text>步
+                </view>
+            </view>
+            <view class='bottom'>
+                <view class='num'>
+                    <view>{{stepNum.average}}</view>
+                    <view class="font24 c666 cont1">步</view>
+                    <view class="font24 cccc cont2">平均步数</view>
+                </view>
+                <view class='num'>
+                    <view>{{stepNum.calorie}}</view>
+                    <view class="font24 c666 cont1">千卡</view>
+                    <view class="font24 cccc cont2">累计消耗</view>
+                </view>
+            </view>
+        </view>
+        <!--  </block>
+        <block wx:else>
+            <view class="bgf box">
+                <view class='text font28 cccc'>
+                    <view class='icon'></view>
+                    无法获取您的运动步数
+                </view>
+                <view class="btn_box">
+                    <button class='btn' open-type="openSetting">获取步数</button>
+                    
+                </view>
+            </view>
+        </block> -->
+    </view>
+    <!-- 体重版块 -->
+    <view class='charts_weight' wx:if='{{select=="weight"}}'>
+        <!--  <block wx:if="{{weightRecords.length==0}}">
+            <view class="bgf font28 weight_text">"嗨~~根据数据分析出您的完美体重为95斤"</view>
+            <view class="h15"></view>
+            <view class='bgf charts_cfg'>
+                <view class='text font28 cccc'>
+                    <view class='icon'></view>
+                    纪录体重需要每天的坚持，加油！</view>
+                <picker mode="multiSelector" bindchange="addWeight" value='{{weightDef}}' range='{{weightData}}' class='btn'>
+                    <button>记录体重</button>
+                </picker>
+            </view>
+        </block>
+        <block wx:else> -->
+        <view class="bgf font28 c000 records_title">体重记录</view>
+        <block wx:if="{{weightRecords.length!=0}}">
+                <view class="bgf records_box">
+                    <view class="font24 cffc no_record">哎呀，一条记录都没有哦~</view>
+                </view>
+        </block>
+        <block wx:else>
+            <view class="bgf flexSpace records_box" wx:for="{{weightRecords}}" wx:key="index">
+                <view class="font28 c999"> {{item.value}}</view>
+                <view class="font30 c333">{{item.createdAt}}</view>
+            </view>
+        </block>
+        <!-- </block> -->
+    </view>
+    <!-- 体围记录 -->
+
+    <view class='charts_tiwei' wx:if='{{select=="tiwei"}}'>
+
+        <view class="bgf charts_type">
+            <view class='bust' catchtap='draw' data-type='bust'>
+                <image src='https://zmlwx.oss-cn-shenzhen.aliyuncs.com/log/Bust_select.png' class="{{selectType!='bust'?'filterGray':''}}"></image>
+                <text class='{{selectType=="bust"?"cfec":"ca8b"}}'>胸围</text>
+            </view>
+            <view class='waist' bindtap='btn_draw' data-type='waist'>
+                <image class="{{selectType!='waist'?'filterGray':''}}" src='https://zmlwx.oss-cn-shenzhen.aliyuncs.com/log/Waist_select.png'></image>
+                <text class='{{selectType=="waist"?"c8cd":"ca8b"}}'>腰围</text>
+            </view>
+            <view class='arm' catchtap='btn_draw' data-type='arm'>
+                <image class="{{selectType!='arm'?'filterGray':''}}" src='https://zmlwx.oss-cn-shenzhen.aliyuncs.com/log/Arm_select.png'></image>
+                <text class='{{selectType=="arm"?"c82d":"ca8b"}}'>手臂围</text>
+            </view>
+            <view class='hipline' catchtap='btn_draw' data-type='hipline'>
+                <image class="{{selectType!='hipline'?'filterGray':''}}" src='https://zmlwx.oss-cn-shenzhen.aliyuncs.com/log/Hipline_select%20.png'></image>
+                <text class='{{selectType=="hipline"?"cffa":"ca8b"}}'>臀围</text>
+            </view>
+            <view class='thigh' catchtap='btn_draw' data-type='thigh'>
+                <image class="{{selectType!='thigh'?'filterGray':''}}" src='https://zmlwx.oss-cn-shenzhen.aliyuncs.com/log/Thigh_select.png'></image>
+                <text class='{{selectType=="thigh"?"c97d":"ca8b"}}'>大腿围</text>
+            </view>
+            <view class='calf' catchtap='btn_draw' data-type='calf'>
+                <image class="{{selectType!='calf'?'filterGray':''}}" src='https://zmlwx.oss-cn-shenzhen.aliyuncs.com/log/Calf_select.png'></image>
+                <text class='{{selectType=="calf"?"caab":"ca8b"}}'>小腿围</text>
+            </view>
+        </view>
+        
+        <view>
+            <view class="h15"></view>
+            <block wx:if="{{tiweiRecords.length!=0}}">
+            <view class="bgf font28 c000 records_title">相关记录</view>
+            
+                <view class="bgf flexSpace records_box" wx:for="{{tiweiRecords}}" wx:key="index">
+                    <view class="font28 c999"> {{item.value}}</view>
+                    <view class="font30 c333">{{item.createdAt}}</view>
+                </view>
+           
+         
+            <view class="h15"></view>
+             </block>
+        </view>
+       
+    </view>
+    <!-- 饮食记录  -->
+    <view wx:if='{{select=="food" && !needEchart}}'>
+        <block wx:if="{{foodsRecords.length == 0}}">
+            <view class="noData">
+                <image src="https://zmlwx.oss-cn-shenzhen.aliyuncs.com/log/noRecords.png"></image>
+                <view class="font36 cffc cont">哎呀,一条记录都没有哦~</view>
+            </view>
+        </block>
+        <block wx:else>
+            <view wx:for="{{foodsRecords}}" wx:key="index">
+                <view class="bgf food_records_box">
+                    <view class="font28 c333 cont">{{item.foodname}}</view>
+                    <view class="font28 c999 time">{{item.createdate}}</view>
+                </view>
+                <view class="h15"></view>
+            </view>
+        </block>
+    </view>
+
+</view>
+<button open-type="contact">
+    <view class="calling">
+        <image src='https://zmlwx.oss-cn-shenzhen.aliyuncs.com/customerservice.png'></image>
+    </view>
+</button>

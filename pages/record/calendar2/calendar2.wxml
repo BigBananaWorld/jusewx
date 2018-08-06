@@ -1,0 +1,69 @@
+<view class="opera">
+    <picker mode="multiSelector" mode="date" fields="year" bindchange="bindYearChange" value="{{year+'-01-01'}}" end="{{year+'-01-01'}}">
+        <view class="opera_year">
+            年份 {{year}}
+        </view>
+    </picker>
+    <view class="goToday" bindtap="goToday"> 回到今天</view>
+</view>
+<!-- <view class="opera_show" wx:if="{{type == 'single'}}">{{currentData}}</view>
+<view class="opera_show" wx:else>{{startDate}} - {{endDate}}</view> -->
+<view class="headbox2">
+    <view class="headdate">日</view>
+    <view class="headdate">一</view>
+    <view class="headdate">二</view>
+    <view class="headdate">三</view>
+    <view class="headdate">四</view>
+    <view class="headdate">五</view>
+    <view class="headdate">六</view>
+</view>
+<view class="headbox">
+    <view class="headdate">日</view>
+    <view class="headdate">一</view>
+    <view class="headdate">二</view>
+    <view class="headdate">三</view>
+    <view class="headdate">四</view>
+    <view class="headdate">五</view>
+    <view class="headdate">六</view>
+</view>
+<scroll-view style="height: 950rpx;" scroll-into-view="{{scrollTo}}" scroll-y="true" upper-threshold="150" bindscrolltoupper="bindUpper">
+    <view class="mouth" wx:for="{{date}}" wx:key="date" wx:for-item="date" wx:for-index="index" id="a{{index+1}}">
+        <view class="mouthhead">{{date[index].year}}年{{date[index].month}}月</view>
+        <view class="daybox">
+            <view class="day" wx:if="{{weeks[index]>0}}"></view>
+            <view class="day" wx:if="{{weeks[index]>1}}"></view>
+            <view class="day" wx:if="{{weeks[index]>2}}"></view>
+            <view class="day" wx:if="{{weeks[index]>3}}"></view>
+            <view class="day" wx:if="{{weeks[index]>4}}"></view>
+            <view class="day" wx:if="{{weeks[index]>5}}"></view>
+            <block wx:if="{{type=='single'}}">
+                <view class="day {{item.date == selectedDate ? 'bc':''}} {{today >=item.date?'':'noselect'}}" wx:for="{{date}}" wx:for-index="idx" wx:key="day" data-now="{{item.date}}" data-index="{{index}}" data-indexs="{{idx}}" bindtap="{{today >=item.date?'selectday':''}}">
+                    <view class="actname {{item.selected == 1 ? 'bc2':''}}">{{date[idx].act.subject}}</view>
+                    <!-- <view class="actname bc2"></view> -->
+                  
+                        {{date[idx].day}}
+                  
+                    
+                    <view wx:if="{{item.sign}}" class="actname2 {{item.selected == 1 ? 'bc2':''}}">签到</view>
+                    <view wx:else class="actname2"></view>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="day {{(item.date==startDate || item.date==endDate) || item.date == selectedDate ? 'bc4':''}} {{(item.date>startDate && item.date<endDate) ? 'bc3':''}}" wx:for="{{date}}" wx:for-index="idx" wx:key="day" data-now="{{item.date}}" data-index="{{index}}" data-indexs="{{idx}}" bindtap="selectday">
+                    <view class="actname {{item.selected == 1 ? 'bc2':''}}">{{date[idx].act.subject}}</view>
+                    
+                        {{date[idx].day}}
+                  
+                    <view wx:if="{{item.sign}}" class="actname2 {{item.selected == 1 ? 'bc2':''}}">签到</view>
+                    <view wx:else class="actname2"></view>
+                </view>
+            </block>
+        </view>
+    </view>
+</scroll-view>
+<view class="btn-position">
+<view class="btn-box">
+    <view class="btn cancel" bindtap="cancel">取消</view>
+    <view class="btn sure" bindtap="submitbtn">确认选择</view>
+</view>
+</view>

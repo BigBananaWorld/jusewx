@@ -1,0 +1,61 @@
+page {
+  height: 100%;
+  background: #F5F5F5;
+}
+view,text,button {
+  padding:0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.inputCont {
+  width: 100%;
+  display: block;
+  border-top: 1rpx solid #E7E7E7;
+  font-size: 32rpx;
+  background: #fff;
+}
+.inputCont>view {
+  height: 90rpx;
+  margin-left: 32rpx;
+  border-bottom: 1rpx solid #E7E7E7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.inputCont>view view:first-child {
+  width: 140rpx;
+}
+.inputCont>view input,.inputCont>view view {
+  width: 560rpx;
+}
+.inputCont>view view:last-child {
+  color: #808080;
+}
+.theDateText {
+  position: relative;
+}
+ .iconfont {
+  padding-left: 276rpx; 
+  font-size: 30rpx;
+  line-height: 90rpx;
+} 
+button {
+  width: 690rpx;
+  height: 90rpx;
+  background: #FD6E6A;
+  color: #FEBFBE;
+  font-size: 34rpx;
+  margin: 30rpx auto; 
+}
+.delete {
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 25rpx;
+  position: absolute;
+  bottom: 61rpx;
+}
+.delete text{
+   padding: 10rpx; 
+   text-align: center; 
+}

@@ -1,0 +1,34 @@
+<view class='header'>
+  <view class='timeBtn' bindtap="bindRangeDate">
+    <text catchtap='bindRangeDate'>
+      <text>{{startDate.length>1?startDate[1]+"月"+startDate[2]+"日"+"-"+endDate[1]+"月"+endDate[2]+"日":""}} </text>
+      <text class=' iconfont icon-jiantouxia col '></text>
+    </text>
+  </view>
+  <view class='doubt'>
+    <text class='iconfont icon-yiwen col' catchtap='bindCloseFood'></text>
+  </view>
+</view>
+<view class='content'>
+  <view class='noUserDeit'> </view>
+  <!-- 信息 -->
+   <view class='deitMsg' wx:for="{{userDeit}}" wx:key='unique'>
+    <view class='theTime'><text>{{index}}</text></view>
+    <view class="table">
+          <view class="tr"> 
+              <view class="th">食物名称</view>
+              <view class="th">数量</view>
+              <view class="th">单位</view>
+          </view>
+          <view class="tr" wx:for="{{item}}" wx:for-index="i" wx:for-item="v"  catchtap='toAddDeit' data-foodname='{{v.foodname}}' data-counts='{{v.counts}}' data-unit='{{v.unit}}' data-date='{{index}}' data-uuid="{{v.uuid}}" data-activeId='{{v.activity_id}}'>
+              <view class="td">{{v.foodname}}</view>
+              <view class="td">{{v.counts}}</view>
+              <view class="td">{{v.unit}}</view>
+          </view>
+    </view>
+  </view> 
+  <!-- 信息结束 -->
+</view>
+<view class='addDeit' catchtap='toAddDeit'>添加异常饮食</view>
+<view class=''></view>
+<food id="food" ></food>

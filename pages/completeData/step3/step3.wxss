@@ -1,0 +1,105 @@
+.container {
+	display: flex;
+	display: -webkit-flex; /* Safari */
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
+	font-family: "PingFang-SC-Medium";
+}
+
+.color-text-box {
+	margin-top: 74rpx;
+	line-height: 60rpx;
+	height: 57rpx;
+}
+
+.color-text-box2 {
+	margin-top: 228rpx;
+	line-height: 57rpx;
+	height: 57rpx;
+}
+
+.color-text {
+	font-size: 60rpx;
+	background: linear-gradient(to right,#FD6E6A 40%,#FFC600 60%);
+	color:transparent;
+ 	-webkit-background-clip: text;
+ 	text-align: center;
+}
+
+.sm-text-box {
+	margin-top: 40rpx;
+	margin-right: auto;
+	margin-left:auto;
+	line-height : 26rpx;
+	height: 26rpx;
+}
+
+.sm-text {
+	font-size:28rpx;
+	color:#666666;
+}
+
+.sex-audio-box {
+	display: flex;
+	justify-content: center;
+}
+
+/*
+ * 滑轮选择字体样式
+ */
+
+.picker {
+	font-size: 60rpx;
+	line-height: 57rpx;
+	height: 57rpx;
+	color: #333333;
+	text-align: center;
+}
+
+.picker-box {
+	margin-top: 80rpx;
+}
+/*
+ * 按钮样式
+ */
+.btn-box {
+	/*margin-top: 157rpx;*/
+	margin-top: 15rpx;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.btn {
+	width: 566rpx;
+	height: 98rpx;
+	line-height: 98rpx;
+	text-align: center;
+	background-color: #FD6E6A;
+	border-radius: 49rpx;
+	font-size: 33rpx;
+	color: #ffffff
+}
+
+.unfinish {
+	background-color: #FEB6B4;
+}
+
+/*
+ * 分割线样式
+ */
+.division {
+	height: 2rpx;
+	width: 452rpx;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 16rpx;
+	background-color: #666666;
+}
+
+.content {
+	height :1000rpx;
+	display: flex;
+	display: -webkit-flex; /* Safari */
+	flex-direction: column;
+}

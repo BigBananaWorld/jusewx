@@ -1,0 +1,310 @@
+
+view,text,button {
+  padding: 0;
+  margin: 0;
+}
+@font-face {
+    font-family: 'PingFang-Medium';
+    src: url('https://xcx.zmelo.com/xcxzml/ttf/PingFang-Medium.ttf');
+}
+ @font-face { 
+  font-family: 'NovaUltraSSiUltraCondensed';
+  src:url('http://jusexcx.oss-cn-hangzhou.aliyuncs.com/assets/font/nova.ttf');
+}
+.content,page{
+  width: 100%;
+  height: 100%;
+  background-color:  #F5F5F5;
+}
+/* 图标部分 */
+
+.topBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1rpx dashed #ccc;
+}
+.topBar cover-view {
+  display: inline-block;
+  width: 30%;
+  height: 76rpx;
+  box-sizing: border-box;
+  text-align: center;
+  /*font-family: PingFang-Medium;*/
+  line-height: 76rpx;
+  position: relative;
+}
+  .selected{
+    color:#FF6666 !important;
+  }
+
+ .selected::before { /*获取焦点 */
+  content: "";
+  display: inline-block;
+  width: 51rpx;
+  height: 6rpx;
+  background: #FF6666;
+  position: absolute;
+  bottom: 0rpx;
+  left: 38%;
+  border-radius: 5rpx;
+}
+.charts {
+  width: 100%;
+  height: 520rpx;
+}
+
+.charts .time_btn {
+  border-style: none;
+  /* line-height: 100rpx; */
+  padding-top: 30rpx;
+  padding-left: 40rpx;
+  font-size: 24rpx;
+  color: #333333;
+  font-family: 'PingFang-Medium' !important;
+}
+.time_btn .iconfont {
+  font-size: 24rpx !important;
+}
+/* 折线图部分 */
+.charts_content {
+  width: 100%;
+  height: 516rpx;
+  /*position: relative;*/
+}
+
+.charts_content .explain{
+  position: absolute;
+  top:200rpx;
+  left:50%;
+  margin-left: -150rpx;
+}
+
+.charts_content image{
+  margin-top: 100rpx;
+  width: 745rpx;
+  height: 250rpx;
+}
+
+/* 体围部分 */
+.charts_type {
+  height:400rpx;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  flex-direction:row;
+  box-sizing:border-box;
+  padding:0 26rpx;
+
+}
+.charts_type view{
+  width: 30%;
+  text-align: center;
+  overflow: hidden; 
+}
+.charts_type image {
+  width: 75rpx;
+  height: 70rpx;
+}
+.colorRed {
+  color: #FF6666 !important;
+}
+.colorDef {
+  color: #A8B0C1 !important;
+}
+.charts_type text {
+  display: block;
+  text-align: center;
+  line-height: 65rpx;
+  font-size: 26rpx;
+}
+.addData_border {
+  width:100%;
+  position: fixed;
+  bottom: 0;
+}
+.addData {
+  width: 100%;
+  height: 100rpx;
+  padding: 0;
+  margin:0;
+  font-size: 26rpx;
+  color: #fff;
+  line-height: 100rpx;
+  text-align: center;
+  background: #FD6E6A;
+}
+
+.charts_weight .weight_text {
+  color:#F5D93C;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+
+.icon {
+  width:30rpx;
+  height:30rpx;
+  display: inline-block;
+  background: url('https://xcx.zmelo.com/xcxzml/Record_.png');
+  /*margin-top: 110rpx;*/
+  background-size: 100%;
+
+}
+
+.charts_weight .charts_cfg {
+  height: 351rpx;
+  text-align: center;
+}
+
+.charts_weight .text {
+  padding-top: 95rpx;
+  line-height: 30rpx;
+  height: 30rpx;
+}
+
+.charts_weight button {
+  background: #FF5A5A;
+  border-radius: 50rpx;
+  line-height: 72rpx;
+  font-size: 28rpx;
+  color:#fff;
+}
+.charts_weight .btn {
+  display: inline-block;
+  width:190rpx;
+  height:40rpx;
+  margin-top: 70rpx;
+}
+
+ .records_title{
+  height:100rpx;
+  line-height: 100rpx;
+  padding-left:45rpx ;
+}
+
+ .records_box{
+  padding-left: 45rpx;
+  padding-right: 70rpx;
+  height:100rpx;
+  line-height: 100rpx;
+  border-top:2rpx solid #E5E5E5;
+}
+
+ .records_box .no_record{
+  text-align: center;
+  
+}
+
+.charts_sign {
+  text-align: center;
+  min-height:425rpx;
+}
+
+.charts_sign .sign_msg{
+  padding: 0 30rpx;
+}
+
+.charts_sign .top {
+  height: 200rpx;
+  border-bottom: 1rpx solid #E5E5E5; 
+}
+.charts_sign .bottom {
+  height: 245rpx;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-around;
+}
+
+.charts_sign .category {
+   padding-top: 50rpx;
+}
+
+.charts_sign .top .num {
+    margin-top:15rpx;
+}
+
+.charts_sign .num :nth-child(1) {
+  font-size: 60rpx;
+  color:#FD6E6A;
+  font-family: 'NovaUltraSSiUltraCondensed';
+}
+
+.charts_sign .bottom .num {
+  padding-top:50rpx; 
+}
+
+.charts_sign .bottom .num .cont1{
+  margin-top:15rpx; 
+}
+
+.charts_sign .bottom .num .cont2{
+  margin-top:15rpx;
+}
+
+.charts_sign .box{
+  height:285rpx;
+  padding-top: 140rpx;
+}
+
+
+.charts_sign .box .btn_box{
+  display: inline-block;
+  width:190rpx;
+  height:40rpx;
+  margin-top: 50rpx;
+}
+
+.charts_sign .box .btn{
+   background: #FF5A5A;
+  border-radius: 50rpx;
+  line-height: 72rpx;
+  font-size: 28rpx;
+  color:#fff;
+}
+
+
+/*529更新*/
+.food_records_box{
+  position:relative;
+  min-height:135rpx;
+}
+
+.food_records_box .cont{
+  padding:30rpx 35rpx 80rpx 35rpx;
+}
+
+.food_records_box .time{
+  position:absolute;
+  bottom:20rpx;
+  right:50rpx;
+}
+
+.calling {
+    position:fixed;
+    top:925rpx;
+    right:40rpx;
+}
+
+.calling image{
+    width:100rpx;
+    height:100rpx;
+}
+
+.filterGray{
+  filter:grayscale(1.0);
+}
+.noData {
+  padding:172rpx 150rpx;
+  text-align: center;
+}
+
+.noData image{
+  height:350rpx;
+  width: 350rpx;
+}
+
+.noData .cont{
+  margin-top: 70rpx;
+}

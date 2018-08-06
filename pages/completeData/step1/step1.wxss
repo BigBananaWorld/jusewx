@@ -1,0 +1,56 @@
+.container {
+	display: flex;
+	display: -webkit-flex; /* Safari */
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
+	font-family: "PingFang-SC-Medium";
+}
+.big-text-box {
+	/*width: 586rpx;*/
+	height: 129rpx;
+	margin: 256rpx 90rpx 0rpx 90rpx ;
+}
+
+.big-text {
+	font-size:60rpx;
+	color:#333333;
+	line-height: 65rpx;
+}
+
+.sm-text-box {
+	/*width:590rpx;*/
+	height: 77rpx;
+	margin: 73rpx 0rpx 0 90rpx;
+}
+
+.sm-text {
+	font-size:28rpx;
+	color:#999999;
+	line-height: 39rpx
+}
+
+.btn-box {
+	margin-top: 15rpx;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.btn {
+	display: table-cell;
+	width: 566rpx;
+	height: 98rpx;
+	vertical-align: middle;
+	text-align: center;
+	background-color: #FD6E6A;
+	border-radius: 49rpx;
+	font-size: 48rpx;
+	color: #ffffff
+}	
+
+.content {
+	height :1000rpx;
+	display: flex;
+	display: -webkit-flex; /* Safari */
+	flex-direction: column;
+}

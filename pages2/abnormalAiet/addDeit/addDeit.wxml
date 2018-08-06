@@ -1,0 +1,27 @@
+<form bindsubmit='{{defData.foodname?modify:pushDeit}}'>
+<!-- {{defData.foodname?'modify':'pushDeit'}} -->
+  <view class='inputCont'>
+    <view class='foodName'>
+      <view>食物</view>
+      <input placeholder='如：炸鸡' maxlength='10' name='foodName' value='{{defData?defData.foodname:null}}'/>
+    </view>
+    <view class='foodNum'>
+      <view>数量</view>
+      <input placeholder='如：100g' maxlength='8' name='foodNum' value='{{defData?defData.counts:null}}'/>
+    </view>
+    <view class='company'>
+      <view>单位</view>
+      <input placeholder='如：克' maxlength='4' name='company' value='{{defData?defData.unit:null}}'/>
+    </view> 
+    <view class='theDate'>
+      <view>日期</view>
+      <picker mode='date' start="1900-01-01" end="{{maxTime}}" class='theDateText' bindchange='bindShowCala' style='color:{{theDay[0]?"black":"#808080"}}' >
+        {{theDay[0]?theDay[0]+'年'+theDay[1]+'月'+theDay[2]+'日':'点击此处选择日期'}}
+        <text class='iconfont icon-jiantouyou col'></text>
+      </picker>
+    </view>
+  </view>
+  <button formType='submit' catchtap='pushDei' wx:if='{{!defData.flag}}'>确认</button>
+  <button formType='submit' catchtap='modif' wx:if='{{defData.flag}}'>修改</button>
+  <view catchtap='dele' wx:if='{{defData.flag}}' class='delete'><text class='iconfont icon-changyonggoupiaorenshanchu col'></text><text>删除这条记录</text></view>
+</form>

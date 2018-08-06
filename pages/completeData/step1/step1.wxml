@@ -1,0 +1,16 @@
+<view class="container">
+    <view class="content">
+    <view class="big-text-box">
+        <view class="big-text">希望通过几个问题,</view>
+        <view class="big-text">了解你更多</view>
+    </view>
+    <view class="sm-text-box">
+        <view class="sm-text">脂玫乐需要您的性别身高体重年龄等资料，</view> 
+        <view class="sm-text">给您提供更好的个性化定制服务，助您减肥成功</view>
+    </view>
+    </view>
+  <view class="btn-box">
+        <view class="btn" bindtap="goNext">GO</view>
+    </view>
+</view>
+  

@@ -1,0 +1,314 @@
+@import "./share.wxss";
+
+.buttons {
+  opacity: 0;
+}
+
+.special_style {
+  background: linear-gradient(to left, #fd6e6a, #ffc600);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-family: 'NovaUltraSSiUltraCondensed';
+}
+
+.header {
+  width: 100%;
+  height: 440rpx;
+  background: lightcoral;
+  position: relative;
+}
+
+.header image {
+  width: 750rpx;
+  height: 440rpx;
+}
+
+.header .calorie {
+  display: inline-block;
+  position: absolute;
+  top: 157rpx;
+  left: 58rpx;
+  z-index: 800;
+  color: white;
+}
+
+@font-face {
+  font-family: 'NovaUltraSSiUltraCondensed';
+  src: url('https://xcx.zmelo.com/xcxzml/ttf/nova.ttf');
+}
+
+@font-face {
+  font-family: 'PingFang-Medium';
+  src: url('https://xcx.zmelo.com/xcxzml/ttf/PingFang-Medium.ttf');
+}
+
+.calorie text {
+  vertical-align: text-top;
+}
+
+.calorie .numb {
+  font-size: 104rpx;
+}
+
+.calorie .company {
+  padding-left: 18rpx;
+  overflow: hidden;
+}
+
+.header .header_title {
+  color: rgb(255,255,255);
+  font-size: 32rpx;
+  position: absolute;
+  top: 84rpx;
+  left: 59rpx;
+}
+
+.header button {
+  width: 172rpx;
+  height: 55rpx;
+  position: absolute;
+  top: 304rpx;
+  left: 58rpx;
+  font-size: 26rpx;
+  border-radius: 50rpx;
+  border: 1rpx solid rgb(255,255,255);
+  line-height: 50rpx;
+  background: transparent;
+  color: rgb(255,255,255);
+  padding: 0;
+}
+
+/* header部分结束 */
+
+/* content部分 */
+
+.content {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.theWeight {
+  width: 100%;
+  height: 420rpx;
+  box-sizing: border-box;
+}
+
+.weight_header {
+  width: 100%;
+  line-height: 112rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+
+.weight_header .selectTime {
+  display: inline-block;
+  button-style: none;
+  min-width: 200rpx;
+  height: 54rpx;
+  margin: 0;
+  background: transparent;
+  background-repeat: no-repeat;
+  background-size: 6%;
+  background-position: 90% 48%;
+  border: 2rpx solid #dbdbdb;
+  border-radius: 50rpx;
+  font-size: 24rpx;
+  line-height: 52rpx;
+   vertical-align: text-top; 
+  text-align: center;
+}
+.weight_header .selectTime::after {
+    content:'';
+    display: inline-block;
+    width: 12rpx;
+    height: 16rpx;
+    background: url('https://xcx.zmelo.com/xcxzml/Triangle2.png') no-repeat;
+    background-size: 100%;
+    margin-left: 10rpx;
+    position: relative;
+    top: -1.2rpx;
+}
+
+.weight_content {
+  width: 100%;
+  margin-top: 18rpx;
+}
+
+.weight_content .need {
+  width: 100%;
+  font-size: 27rpx;
+  color: black;
+  line-height: 86rpx;
+  text-align: center;
+  letter-spacing: 1rpx;
+}
+
+.progress_bar {
+  text-align: center;
+  font-family: 'NovaUltraSSiUltraCondensed';
+  font-size: 25rpx;
+  color: #666;
+}
+
+.weight_content .need>text {
+  font-size: 60rpx;
+  letter-spacing: 0rpx;
+}
+
+.progress_bar .progress_active {
+  width: 25%;
+  height: 100%;
+  border-style: none;
+  border-radius: 50rpx;
+  background: linear-gradient(to top left, #fd6e6a 30%, #ffc600 70%);
+}
+
+.progress_bar .progress_bg {
+  width: 526rpx;
+  height: 17rpx;
+  display: inline-block;
+  border-radius: 50rpx;
+  background: #eff2f7;
+  overflow: hidden;
+  margin: 0 20rpx;
+}
+
+.weight_content .btn {
+  width: 216rpx;
+  height: 66rpx;
+  display: inline-block;
+  margin-left: 271rpx;
+  box-sizing: border-box;
+  border-radius: 50rpx;
+  box-shadow: 0 5rpx 10rpx #fed6cb;
+  text-align: center;
+  line-height: 66rpx;
+  background: linear-gradient(to top left, #fd6e6a 20%, #ffc600 80%);
+  color: rgb(255,255,255);
+  font-size: 28rpx;
+  margin-top: 60rpx !important;
+  margin-bottom: 20px;
+}
+
+.content .other {
+  background: #f1f1f1;
+  padding: 18rpx 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content .other>view {
+  width: 373rpx;
+  height: 340rpx;
+  background: rgb(255,255,255);
+}
+
+.other .title {
+  font-size: 32rpx;
+  color: #000;
+  line-height: 96rpx;
+  padding-left: 30rpx;
+  /* font-weight: 500; */
+}
+
+.other .msg {
+  text-align: center;
+  font-size: 28rpx;
+  letter-spacing: 1rpx;
+  margin-top: 26rpx;
+}
+
+.other .msg .time {
+  font-size: 40rpx;
+  vertical-align: -1%;
+  font-family: 'PingFang-Medium';
+}
+
+.other .msg>view {
+  font-size: 23rpx;
+  line-height: 42rpx;
+  color: #666;
+  letter-spacing: 2rpx;
+  font-family: 'PingFang-Medium';
+}
+
+.sign, .diet {
+  position: relative;
+}
+
+.other .btn {
+  border-style: none;
+  display: inline-block;
+  width: 216rpx;
+  height: 68rpx;
+  line-height: 66rpx;
+  box-sizing: border-box;
+  border-radius: 50rpx;
+  box-shadow: 0 5rpx 10rpx #fed6cb;
+  background: linear-gradient(to top left, #fd6e6a 20%, #ffc600 80%);
+  font-size: 28rpx;
+  color: rgb(255,255,255);
+  position: absolute;
+  text-align: center;
+  bottom: 21rpx;
+  left: 79rpx;
+}
+
+/* 423添加*/
+
+.weight_content .finish_box {
+  display: flex;
+  margin-top: 60rpx;
+}
+
+.finish_box .left {
+  width: 45%;
+}
+
+.finish_box .right {
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+}
+
+.finish_box .right .title_top {
+  color: #333;
+  font-size: 30rpx;
+}
+
+.finish_box .right .title_mid {
+  color: #999;
+  font-size: 24rpx;
+  margin-top: 33rpx;
+  margin-right: 37rpx;
+}
+
+.chp_img {
+  width: 175rpx;
+  height: 196rpx;
+  margin-left: 76rpx;
+}
+
+.title_bottom {
+  margin-bottom: 59rpx;
+  height: 67rpx;
+  line-height: 66rpx;
+  border-radius: 33rpx;
+  box-shadow: 0 5rpx 10rpx #fed6cb;
+  background: linear-gradient(to top left, #fd6e6a 20%, #ffc600 80%);
+  font-size: 30rpx;
+  color: rgb(255,255,255);
+  margin-right: 200rpx;
+  margin-top: 44rpx;
+  text-align: center;
+}
+
+page {
+  position: relative;
+}
